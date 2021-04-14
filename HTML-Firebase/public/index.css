@@ -1,0 +1,32 @@
+body {
+	background-color: #E8E8E8!important;
+}
+
+.search_btn {
+	padding: 10px;
+	background-color: #A8A7A7;
+	border-radius: 10%;
+}
+
+.basket_btn {
+	width: 35px;
+	height: auto;
+	margin: 0 2vw;
+}
+
+.search-nav,.nav-item {
+	margin: 0 2vw;
+}
+
+.nav-link {
+	color: #707070;
+	font-weight: bold;
+}
+
+.nav-link:hover {
+	color: #D50EB4;
+}
+
+.navbar {
+	height: 13vh;
+}
