@@ -1,49 +1,61 @@
 body {
-	background-color: #E8E8E8!important;
+  background-color: #E8E8E8!important;
 }
 
 .search_btn {
-	padding: 10px;
-	background-color: #A8A7A7;
-	border-radius: 10%;
+  padding: 10px;
+  background-color: #A8A7A7;
+  border-radius: 10%;
 }
 
 .basket_btn {
-	width: 35px;
-	height: auto;
-	margin: 0 2vw;
+  width: 35px;
+  height: auto;
+  margin: 0 2vw;
 }
 
 .search-nav,.nav-item {
-	margin: 0 2vw;
+  margin: 0 2vw;
 }
 
 .nav-link {
-	color: #707070;
-	font-weight: bold;
-	padding: 4vh 1.5vw!important;
-	border-bottom: 3px solid #f8f9fa;
+  color: #707070;
+  font-weight: bold;
+  padding: 4vh 1.5vw!important;
+  border-bottom: 3px solid #f8f9fa;
 }
 
 .nav-link:hover {
-	color: #D50EB4;
-	border-bottom: 3px solid #D50EB4;
+  color: #D50EB4;
+  border-bottom: 3px solid #D50EB4;
 }
 
 .content {
-	display: flex;
+  display: flex;
 }
 
 .catagory {
-	background-color: #f8f9fa;
-	border-radius: 10%;
-	padding: 1%;
-	margin: 1%;
-	justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 10%;
+  padding: 1%;
+  margin: 1%;
+  justify-content: center;
 }
 
 .catagory span {
-	color: #D50EB4;
-	font-weight: bold;
-	font-size: 14pt;
+  color: #D50EB4;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+/* page-8 */
+
+.sub-nav {
+  margin: 0 2vw;
+  color: #707070;
+  font-weight: bold;
+  padding: 4vh 1.5vw!important;
+  border-bottom: 3px solid #f8f9fa; 
+  display: flex;
+  justify-content: center;
 }
