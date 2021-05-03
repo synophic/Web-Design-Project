@@ -48,6 +48,9 @@ body {
 	font-size: 14pt;
 }
 
+
+/* page-0 */
+
 .homeimg {
 	z-index: 20;
 	
@@ -61,6 +64,7 @@ body {
 	width:30%;
 
 }
+
 
 
 
@@ -90,39 +94,27 @@ body {
 
 }
 
-
-
-/* button */
-.btn btn-light px-5 py-2 {
-	display: flex;
-	justify-items: start;
-	z-index: 1;
-
-
+.container .col-lg-12{
+	height: 100%;
 
 
 }
 
-@include media-breakpoint-up(sm) {
-	html {
-	  font-size: 1.2rem;
-	}
-	.home1{
-		font-size: 1.2rem;
-	  }
-  }
-  
-  @include media-breakpoint-up(md) {
-	html {
-	  font-size: 1.4rem;
-	}
-	.home1{
-		font-size: 1.4rem;
-	  }
-  }
-  
-  @include media-breakpoint-up(lg) {
-	html {
-	  font-size: 1.6rem;
-	}
-  }
+
+/* button */
+.container .col-lg-12 button{
+	display: flex;
+	justify-items: start;
+	align-self: end;
+	z-index: 1;
+	border-radius: 30px;
+	font-weight: bold;
+
+}
+
+
+
+.section-1
+{
+	background: #000;
+}
