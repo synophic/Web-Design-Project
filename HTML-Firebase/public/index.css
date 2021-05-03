@@ -47,3 +47,82 @@ body {
 	font-weight: bold;
 	font-size: 14pt;
 }
+
+.homeimg {
+	z-index: 20;
+	
+}
+
+.home {
+	bottom: 8%;
+	left: 40%;
+	display: flex;
+	position: absolute;
+	width:30%;
+
+}
+
+
+
+.hometext{
+	z-index: 1;
+	
+	/* display: inline;
+	justify-items: start; */
+}
+
+.home1{
+
+	color: #ffffff;
+	font-size: 8rem;
+	z-index: 1;
+	display: flex;
+	justify-items: start;
+	letter-spacing: 3rem;
+}
+.home2{
+	padding-top: 10%;
+	color: #000000;
+	font-size: 5rem;
+	display: flex;
+	justify-items: start;
+	z-index: 1;
+
+}
+
+
+
+/* button */
+.btn btn-light px-5 py-2 {
+	display: flex;
+	justify-items: start;
+	z-index: 1;
+
+
+
+
+}
+
+@include media-breakpoint-up(sm) {
+	html {
+	  font-size: 1.2rem;
+	}
+	.home1{
+		font-size: 1.2rem;
+	  }
+  }
+  
+  @include media-breakpoint-up(md) {
+	html {
+	  font-size: 1.4rem;
+	}
+	.home1{
+		font-size: 1.4rem;
+	  }
+  }
+  
+  @include media-breakpoint-up(lg) {
+	html {
+	  font-size: 1.6rem;
+	}
+  }
