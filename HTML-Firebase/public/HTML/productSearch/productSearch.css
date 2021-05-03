@@ -1,0 +1,80 @@
+body {
+	background-color: #E8E8E8!important;
+}
+
+.search_btn {
+	padding: 10px;
+	background-color: #A8A7A7;
+	border-radius: 10%;
+}
+
+.basket_btn {
+	width: 35px;
+	height: auto;
+	margin: 0 2vw;
+}
+
+.search-nav,.nav-item {
+	margin: 0 2vw;
+}
+
+.navbar {
+	background-color: white;
+}
+
+.nav-link {
+	color: #707070;
+	font-weight: bold;
+	padding: 4vh 1.5vw!important;
+	border-bottom: 3px solid white;
+}
+
+.nav-link:hover {
+	color: #D50EB4;
+	border-bottom: 3px solid #D50EB4;
+}
+
+.content {
+	display: flex;
+}
+
+.catagory {
+	background-color: white;
+	padding: 1%;
+	margin: 1% 1% 1% 0!important;
+	border-radius: 10px;
+	justify-content: center;
+}
+
+.catagory span {
+	color: #D50EB4;
+	font-weight: bold;
+	font-size: 14pt;
+	text-align: center;
+	display: block;
+}
+
+.catg-list {
+	text-decoration: none;
+	list-style-type: none!important;
+	padding: 10px;
+	margin: 0;
+}
+
+.catg-item {
+	color: #A9A9A9;
+	font-weight: bold;
+}
+.catg-item:hover {
+	color: black;
+	cursor: pointer;
+}
+
+.card {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: 5%;
+	border-radius: 5px;
+	margin-top: 5%;
+}

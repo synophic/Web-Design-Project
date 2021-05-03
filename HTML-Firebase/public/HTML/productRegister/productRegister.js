@@ -1,0 +1,101 @@
+var userRef = firebase.database().ref("user");
+var productRef = firebase.database().ref("product");
+var soldRecRef = firebase.database().ref("soldRec");
+var catagoryRef = firebase.database().ref("catagory");
+
+let storageRef = firebase.storage().ref("product");
+
+let user_data;
+let prod_data;
+let sold_data;
+let catg_data;
+
+function getData() {
+  userRef.orderByChild("id").on("value", (snapshot) => {
+    if (snapshot.exists()) {
+    	user_data = snapshot.val();
+    } else {
+      console.log("No User data available");
+      user_data = "";
+      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
+    }
+  });
+  productRef.orderByChild("id").on("value", (snapshot) => {
+    if (snapshot.exists()) {
+    	prod_data = snapshot.val();
+    } else {
+      console.log("No Product data available");
+      prod_data_data = "";
+      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
+    }
+  });
+  soldRecRef.orderByChild("id").on("value", (snapshot) => {
+    if (snapshot.exists()) {
+    	sold_data = snapshot.val();
+    } else {
+      console.log("No Sold record data available");
+      sold_data = "";
+      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
+    }
+  });
+  catagoryRef.orderByChild("id").on("value", (snapshot) => {
+    if (snapshot.exists()) {
+    	catg_data = snapshot.val();
+    } else {
+      console.log("No Catagory data available");
+      catg_data = "";
+      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
+    }
+  });
+
+  // 1.3) Get "runId" value from Realtime database. then store data to "RUN_ID" variable.
+}
+
+function uploadData() {
+  let name = document.querySelector("#name").value;
+  let brand = document.querySelector("#brand").value;
+  let quantity = document.querySelector("#quantity").value;
+  let price = document.querySelector("#price").value;
+  let desc = document.querySelector("#desc").value;
+
+  if ((name != "") && 
+    (brand != "") &&
+    (quantity != 0) &&
+    (price != 0) &&
+    (desc != "") &&
+    document.querySelector("#files").files.length != 0) {
+    let newProdRef = productRef.push({
+      "name": name,
+      "brand": brand,
+      "quantity": parseFloat(quantity),
+      "price": parseInt(price),
+      "description": desc
+    });
+
+    for (var i = 0; i < document.querySelector("#files").files.length; i++) {
+      let file = document.querySelector("#files").files[i];
+      let date = new Date().getTime();
+
+      let thisRef = storageRef.child(newProdRef.key + "/" + date + "_" + file.name);
+      
+      thisRef.put(file).then((snapshot) => {
+        thisRef.getDownloadURL().then((url) =>{
+          newProdRef.child("images").push(url);
+        });
+      }).catch(e=>{
+        console.log('Error'+e);
+      });
+    }
+    alert("Upload Success")
+
+  }
+  else {
+    if (name == "") document.querySelector("#nameAlert").style.display = "initial";
+    if (brand == "") document.querySelector("#nameAlert").style.display = "initial";
+    if (quantity == "") document.querySelector("#nameAlert").style.display = "initial";
+    if (price == "") document.querySelector("#nameAlert").style.display = "initial";
+    if (document.querySelector("#files").files.length == 0) document.querySelector("#nameAlert").style.display = "initial";
+  }
+}
+
+window.onload = getData();
