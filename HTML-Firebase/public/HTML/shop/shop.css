@@ -44,6 +44,7 @@ body {
 	margin: 1% 1% 1% 0!important;
 	border-radius: 10px;
 	justify-content: center;
+	height: fit-content;
 }
 
 .catagory span {
@@ -81,7 +82,14 @@ body {
 }
 
 .card p {
-	color: red;
+	color: #D50EB4;
 	font-weight: bold;
-	font-size: 18pt;
+	font-size: 15pt;
+}
+
+.card button {
+	background-color: #C30DA4;
+	color: white;
+	border-style: none;
+	border-radius: 15px;
 }

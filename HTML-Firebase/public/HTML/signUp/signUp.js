@@ -1,5 +1,6 @@
 var user = firebase.database().ref("user");
 var product = firebase.database().ref("product");
+var soldRec = firebase.database().ref("soldRec");
 var catagory = firebase.database().ref("catagory");
 
 let CATAGORY_LIST_CONTAINER = document.querySelector(".catg-list");
@@ -22,10 +23,18 @@ function getData() {
   product.orderByChild("id").on("value", (snapshot) => {
     if (snapshot.exists()) {
     	prod_data = snapshot.val();
-      renderProductCard(prod_data);
     } else {
       console.log("No Product data available");
       prod_data_data = "";
+      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
+    }
+  });
+  soldRec.orderByChild("id").on("value", (snapshot) => {
+    if (snapshot.exists()) {
+    	sold_data = snapshot.val();
+    } else {
+      console.log("No Sold record data available");
+      sold_data = "";
       // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
     }
   });
@@ -59,56 +68,6 @@ function createCatagoryList(text){
 	a.innerHTML = text;
 	li.appendChild(a);
 	return li;
-}
-
-function renderProductCard(product){
-  const row = document.querySelector("#list");
-  for (let items in product) {
-    const contain = document.createElement("div");
-    const card = document.createElement("div");
-    const image = document.createElement("img");
-    const name = document.createElement("h3");
-    const value = document.createElement("p");
-    const addCart = document.createElement("button");
-
-    contain.classList.add("col-md-4");
-    contain.classList.add("col-lg-3");
-    contain.dataset.product = items;
-    contain.style.cursor = 'pointer';
-    contain.onclick = function() {window.document.location = "../productInfo/productInfo.html" + "?product=" + this.dataset.product};
-
-    card.classList.add("card");
-
-    for (let j in product[items].images) {
-      image.src = product[items].images[j];
-      break;
-    }
-
-    name.innerHTML = product[items].name;
-    value.innerHTML = "฿" + toPrice(product[items].price);
-    addCart.innerHTML = "Add to Cart";
-
-    card.appendChild(image);
-    card.appendChild(name);
-    card.appendChild(value);
-    card.appendChild(addCart);
-
-    contain.appendChild(card);
-
-    row.appendChild(contain);
-  }
-}
-
-function toPrice(num){
-  let newNum = num;
-  let text = newNum % 1000 + "";
-  newNum = Math.floor(newNum / 1000);
-  while(newNum > 1000) {
-    text = newNum % 1000 + "," + text;
-    newNum = Math.floor(newNum / 1000);
-  }
-  text = newNum + "," + text;
-  return text;
 }
 
 window.onload = getData();

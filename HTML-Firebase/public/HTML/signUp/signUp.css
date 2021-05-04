@@ -1,0 +1,167 @@
+body {
+	background-color: #E8E8E8!important;
+}
+
+.search_btn {
+	padding: 10px;
+	background-color: #A8A7A7;
+	border-radius: 10%;
+}
+
+.basket_btn {
+	width: 35px;
+	height: auto;
+	margin: 0 2vw;
+}
+
+.search-nav,.nav-item {
+	margin: 0 2vw;
+}
+
+.navbar {
+	background-color: white;
+}
+
+.nav-link {
+	color: #707070;
+	font-weight: bold;
+	padding: 4vh 1.5vw!important;
+	border-bottom: 3px solid white;
+}
+
+.nav-link:hover {
+	color: #D50EB4;
+	border-bottom: 3px solid #D50EB4;
+}
+
+.container  {
+	width: 30%!important;
+	margin: 10% 20%;
+	background-color: white;
+	padding: 2% 10% 2% 10%;
+	border-radius: 15px;
+}
+
+
+
+.container h1 {
+	text-align: center;
+	font-weight: bold;
+	color: #D50EB4;
+	font-size: 22pt;
+	margin-bottom: 10%;
+}
+
+
+
+
+.submit-btn {
+	background-color: #C30DA4;
+	color: white;
+	padding: 10px 20px;
+	width: 40%;
+	/* margin: 15px; */
+	border-style: none;
+	border-radius: 15px;
+    font-weight:500;
+}
+
+/* .container .list-group .list-group-item{
+
+    color: #707070;
+    font-weight:500;
+
+}
+
+.container .list-group .list-group-item a{
+
+    text-decoration: none;
+    border: none;
+    color: #707070;
+}
+
+h3 {
+    color:#525151;
+    font-weight:500;
+    
+
+
+
+} */
+.form-group {
+    margin: 5% ;
+    width: 80%;
+    
+
+
+}
+.form-group .form-control{
+    background:#D2D2D2;
+}
+
+
+
+/* res sing up */
+@media only screen and (max-width: 991px) {
+    .form-group {
+        margin: 3%;
+        width: 80%;
+        height: 10%;
+        font-size: 50%;
+    }
+
+    .submit-btn {
+        background-color: #C30DA4;
+        color: white;
+
+        width: 50%;
+   
+        border-style: none;
+        border-radius: 10px;
+        font-weight:500;
+        font-size: 100%;
+    }
+
+    .container  {
+        width: 35%!important;
+      
+    }
+    
+  }
+
+
+@media only screen and (max-width: 576px) {
+    .form-group {
+        margin: 3%;
+        width: 80%;
+        height: 10%;
+        font-size: 50%;
+    
+    
+    }
+
+    .submit-btn {
+        background-color: #C30DA4;
+        color: white;
+        /* padding: 10px 20px; */
+        width: 50%;
+        /* height: 10%; */
+        /* margin: 15px; */
+        border-style: none;
+        border-radius: 10px;
+        font-weight:500;
+        font-size: 100%;
+    }
+
+    .container  {
+        width: 50%!important;
+        /* margin: 10% 20%; */
+        background-color: white;
+        /* padding: 2% 10% 2% 10%; */
+        border-radius: 15px;
+    }
+    
+  }
+
+
+
