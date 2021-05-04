@@ -65,8 +65,8 @@ body {
 }
 
 .sub-container {
-  width: 40%!important;
-  margin: 2% 32%;
+  width: 50%!important;
+  margin: 2% 28%;
   background-color: white;
   padding: 2% 10% 2% 10%;
   border-radius: 15px;
@@ -78,4 +78,29 @@ body {
   color: #D50EB4;
   font-size: 22pt;
   margin-bottom: 5%;
+}
+
+.sub-container img{
+  width: 70%;
+  margin-left: 15%;
+}
+
+.sub-container h4 {
+  font-weight: bold;
+  color: #707070;
+  font-size: 12pt;
+}
+
+.submit-btn {
+	background-color: #C30DA4;
+	color: white;
+	padding: 10px 20px;
+	width: 40%;
+	margin: 15px;
+	border-style: none;
+	border-radius: 15px;
+}
+
+.submit-btn:hover {
+	background-color: #9A0B82;
 }
