@@ -1,6 +1,5 @@
 var user = firebase.database().ref("user");
 var product = firebase.database().ref("product");
-var soldRec = firebase.database().ref("soldRec");
 var catagory = firebase.database().ref("catagory");
 
 let CATAGORY_LIST_CONTAINER = document.querySelector(".catg-list");
@@ -13,7 +12,7 @@ let catg_data;
 function getData() {
   user.orderByChild("id").on("value", (snapshot) => {
     if (snapshot.exists()) {
-    	user_data = snapshot.val();
+      user_data = snapshot.val();
     } else {
       console.log("No User data available");
       user_data = "";
@@ -22,26 +21,18 @@ function getData() {
   });
   product.orderByChild("id").on("value", (snapshot) => {
     if (snapshot.exists()) {
-    	prod_data = snapshot.val();
+      prod_data = snapshot.val();
+      renderProductCard(prod_data);
     } else {
       console.log("No Product data available");
       prod_data_data = "";
       // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
     }
   });
-  soldRec.orderByChild("id").on("value", (snapshot) => {
-    if (snapshot.exists()) {
-    	sold_data = snapshot.val();
-    } else {
-      console.log("No Sold record data available");
-      sold_data = "";
-      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
-    }
-  });
   catagory.orderByChild("id").on("value", (snapshot) => {
     if (snapshot.exists()) {
-    	catg_data = snapshot.val();
-    	renderCatagoryList(catg_data);
+      catg_data = snapshot.val();
+      renderCatagoryList(catg_data);
     } else {
       console.log("No Catagory data available");
       catg_data = "";
@@ -53,21 +44,68 @@ function getData() {
 }
 
 function renderCatagoryList(catagoryList){
-	CATAGORY_LIST_CONTAINER.innerHTML = "";
-	for (let i in catagoryList) {
-		CATAGORY_LIST_CONTAINER.appendChild(
-			createCatagoryList(catagoryList[i])
-			);
-	}
+  CATAGORY_LIST_CONTAINER.innerHTML = "";
+  for (let i in catagoryList) {
+    CATAGORY_LIST_CONTAINER.appendChild(
+      createCatagoryList(catagoryList[i])
+      );
+  }
 }
 
 function createCatagoryList(text){
-	const li = document.createElement("li");
-	const a = document.createElement("a");
-	li.classList.add("catg-item");
-	a.innerHTML = text;
-	li.appendChild(a);
-	return li;
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  li.classList.add("catg-item");
+  a.innerHTML = text;
+  li.appendChild(a);
+  return li;
+}
+
+function renderProductCard(product){
+  const row = document.querySelector("#list");
+  for (let items in product) {
+    const contain = document.createElement("div");
+    const card = document.createElement("div");
+    const image = document.createElement("img");
+    const name = document.createElement("h3");
+    const value = document.createElement("p");
+    const addCart = document.createElement("button");
+
+    contain.dataset.product = items;
+    contain.style.cursor = 'pointer';
+    
+
+
+    for (let j in product[items].images) {
+      image.src = product[items].images[j];
+      break;
+    }
+
+    name.innerHTML = product[items].name;
+    value.innerHTML = "฿" + toPrice(product[items].price);
+    
+
+    card.appendChild(image);
+    card.appendChild(name);
+    card.appendChild(value);
+    
+
+    contain.appendChild(card);
+
+    row.appendChild(contain);
+  }
+}
+
+function toPrice(num){
+  let newNum = num;
+  let text = newNum % 1000 + "";
+  newNum = Math.floor(newNum / 1000);
+  while(newNum > 1000) {
+    text = newNum % 1000 + "," + text;
+    newNum = Math.floor(newNum / 1000);
+  }
+  text = newNum + "," + text;
+  return text;
 }
 
 window.onload = getData();
