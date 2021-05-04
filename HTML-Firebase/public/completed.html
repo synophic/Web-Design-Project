@@ -22,39 +22,19 @@
             </button>
             <div class="container">
                 <ul class="sub-nav">
-                    <li class="content">CHECKOUT</li>
+                    <li class="content">ORDER</li>
                 </ul> 
             </div>
         </div>
     </nav>
 
     <div class="sub-container">
-        <h1>YOUR ORDER</h1>
+        <h1>ORDER COMPLETED</h1>
         <img src="img-checkout/ip12pm.png">
         <h4>iPhone 12 Pro Max (128 GB)</h4>
-        <h4>Price : 28,000 Bath</h4>
-        <h4>Amount : 1 pcs</h4>
-        <div class="">
-            <h4>County : </h4><select name="subject" id="subject">
-                <option value="" selected="selected">-- Select --</option>
-            </select>
-            <h4>Shipment Address : </h4><select name="topic" id="topic">
-                <option value="" selected="selected">-- Select --</option>
-            </select>
-            <h4>Shipment : </h4><select name="chapter" id="chapter">
-                <option value="" selected="selected">-- Select --</option>
-            </select><br><br>
-        </div>
-        <h4 >Total Product Price : 28,000 Bath</h4> 
-        <h4>Shopping cost : 200 Bath</h4>
-        <h4>ToTal Price : 28,200 Bath</h4>
-        
-        
-        <center>
-            <button class="submit-btn" onclick="uploadData()">Confirm Order</button>
-        </center>
-             
-        
+        <h4>Shipping Area : กรุงเทพและปริมณฑล</h4>
+        <h4>Shipment : EMS</h4> 
+        <h4>Address : 62 Losang, Mongual, 2648 USA</h4>   
     </div>
     
 
@@ -89,44 +69,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="./main.js"></script>
 
-    <script>
-var subjectObject = {
-  "กรุงเทพและปริมณฑล": {
-    "ไปรษณีย์ไทย": ["EMS", "ลงทะเบียน"],
-    "KERRY": ["Next Day", "2 Day"]    
-  },
-  "ต่างจังหวัด": {
-    "ไปรษณีย์ไทย": ["EMS", "ลงทะเบียน"],
-    "KERRY": ["Next Day", "2 Day"]
-  }
-}
-window.onload = function() {
-  var subjectSel = document.getElementById("subject");
-  var topicSel = document.getElementById("topic");
-  var chapterSel = document.getElementById("chapter");
-  for (var x in subjectObject) {
-    subjectSel.options[subjectSel.options.length] = new Option(x, x);
-  }
-  subjectSel.onchange = function() {
-    //empty Chapters- and Topics- dropdowns
-    chapterSel.length = 1;
-    topicSel.length = 1;
-    //display correct values
-    for (var y in subjectObject[this.value]) {
-      topicSel.options[topicSel.options.length] = new Option(y, y);
-    }
-  }
-  topicSel.onchange = function() {
-    //empty Chapters dropdown
-    chapterSel.length = 1;
-    //display correct values
-    var z = subjectObject[subjectSel.value][this.value];
-    for (var i = 0; i < z.length; i++) {
-      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-    }
-  }
-}
-</script>
 </body>
 
 
