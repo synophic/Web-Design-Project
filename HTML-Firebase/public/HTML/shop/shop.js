@@ -73,6 +73,10 @@ function renderProductCard(product){
 
     contain.classList.add("col-md-4");
     contain.classList.add("col-lg-3");
+    contain.dataset.product = items;
+    contain.style.cursor = 'pointer';
+    contain.onclick = function() {window.document.location = "../productInfo/productInfo.html" + "?product=" + this.dataset.product};
+
     card.classList.add("card");
 
     for (let j in product[items].images) {

@@ -44,6 +44,7 @@ body {
 	margin: 1% 1% 1% 0!important;
 	border-radius: 10px;
 	justify-content: center;
+	height: fit-content;
 }
 
 .catagory span {
@@ -76,12 +77,68 @@ body {
 }
 
 .preview {
-	width: 100%;
+	width: 80%;
+	margin: 0 10%;
+}
+
+.inStock {
+	color: green;
+	font-weight: bold;
+	text-align: end;
+	width: 80%;
+}
+
+.outStock {
+	color: red;
+	font-weight: bold;
+	text-align: end;
+	width: 80%;
+}
+
+.addCart {
+	display: flex;
+    align-items: flex-end;
+}
+
+.addCart button {
+	padding: 8px;
+    border-radius: 5px;
+    background-color: #C30DA4;
+	color: white;
+	border-style: none;
+}
+
+.addCart button:hover {
+	background-color: #9A0B82;
+}
+
+#detail {
+	padding: 5% 0
+}
+
+#name {
+	font-size: 30pt;
+}
+
+#price {
+	margin-top: 5%;
+    font-size: 15pt;
+    color: #C30DA4;
+}
+
+#desc {
+	margin: 10% 5% 0 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .slide-img {
-	width: 100%;
-	pointer-events: auto;
+    height: 100%;
+	cursor: pointer!important;
 }
 
 .slider {
@@ -94,13 +151,16 @@ body {
 .slider-inner {
 	position: absolute;
 	height: 100%;
-	width: 600px;
 	display: flex;
 	pointer-events: none;
 }
 
 .slide-border {
-	height: 100px;
-	width: 100px;
-	justify-content: space-around;
+	display: flex;
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: none;
 }
