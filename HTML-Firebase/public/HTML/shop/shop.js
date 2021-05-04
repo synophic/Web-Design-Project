@@ -66,6 +66,7 @@ function renderProductCard(product){
   for (let items in product) {
     const contain = document.createElement("div");
     const card = document.createElement("div");
+    const imgBorder = document.createElement("div");
     const image = document.createElement("img");
     const name = document.createElement("h3");
     const value = document.createElement("p");
@@ -75,12 +76,16 @@ function renderProductCard(product){
     contain.classList.add("col-lg-3");
     contain.dataset.product = items;
     contain.style.cursor = 'pointer';
+    contain.style.height = "350px";
     contain.onclick = function() {window.document.location = "../productInfo/productInfo.html" + "?product=" + this.dataset.product};
 
     card.classList.add("card");
 
+    imgBorder.classList.add("imgBorder")
+
     for (let j in product[items].images) {
       image.src = product[items].images[j];
+      imgBorder.appendChild(image);
       break;
     }
 
@@ -88,7 +93,7 @@ function renderProductCard(product){
     value.innerHTML = "฿" + toPrice(product[items].price);
     addCart.innerHTML = "Add to Cart";
 
-    card.appendChild(image);
+    card.appendChild(imgBorder);
     card.appendChild(name);
     card.appendChild(value);
     card.appendChild(addCart);

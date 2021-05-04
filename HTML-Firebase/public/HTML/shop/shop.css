@@ -71,23 +71,46 @@ body {
 	cursor: pointer;
 }
 
+.imgBorder {
+	height: 150px;
+    width: 150px;
+    overflow: hidden;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.imgBorder img {
+	height: 100%;
+	width: auto;
+}
+
 .card {
-	background-color: white;
-	display: flex;
-	justify-content: center;
 	text-align: center;
 	padding: 5%;
-	border-radius: 5px;
 	margin-top: 5%;
+	height: 93%;
+    width: 100%;
+}
+
+.card h3 {
+	margin-top: 10%;
+	overflow: hidden;
+   	text-overflow: ellipsis;
+   	display: -webkit-box;
+   	-webkit-line-clamp: 1; /* number of lines to show */
+   	-webkit-box-orient: vertical;
 }
 
 .card p {
 	color: #D50EB4;
 	font-weight: bold;
-	font-size: 15pt;
+	font-size: 13pt;
 }
 
 .card button {
+	margin-top: 10%;
 	background-color: #C30DA4;
 	color: white;
 	border-style: none;
