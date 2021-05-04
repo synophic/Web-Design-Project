@@ -50,6 +50,11 @@ body {
 	margin-bottom: 10%;
 }
 
+.container .col-sm-12 {
+    padding-left: 3%;
+    padding-right: 3%;
+
+}
 
 
 .submit-btn {
