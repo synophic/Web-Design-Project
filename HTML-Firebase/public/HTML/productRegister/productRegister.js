@@ -1,6 +1,5 @@
 var userRef = firebase.database().ref("user");
 var productRef = firebase.database().ref("product");
-var soldRecRef = firebase.database().ref("soldRec");
 var catagoryRef = firebase.database().ref("catagory");
 
 let storageRef = firebase.storage().ref("product");
@@ -17,7 +16,6 @@ function getData() {
     } else {
       console.log("No User data available");
       user_data = "";
-      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
     }
   });
   productRef.orderByChild("id").on("value", (snapshot) => {
@@ -26,16 +24,6 @@ function getData() {
     } else {
       console.log("No Product data available");
       prod_data_data = "";
-      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
-    }
-  });
-  soldRecRef.orderByChild("id").on("value", (snapshot) => {
-    if (snapshot.exists()) {
-    	sold_data = snapshot.val();
-    } else {
-      console.log("No Sold record data available");
-      sold_data = "";
-      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
     }
   });
   catagoryRef.orderByChild("id").on("value", (snapshot) => {
@@ -44,11 +32,8 @@ function getData() {
     } else {
       console.log("No Catagory data available");
       catg_data = "";
-      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
     }
   });
-
-  // 1.3) Get "runId" value from Realtime database. then store data to "RUN_ID" variable.
 }
 
 function uploadData() {
