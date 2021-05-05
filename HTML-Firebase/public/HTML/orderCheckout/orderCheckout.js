@@ -2,7 +2,7 @@ var user = firebase.database().ref("user");
 var product = firebase.database().ref("product");
 var catagory = firebase.database().ref("catagory");
 
-let CATAGORY_LIST_CONTAINER = document.querySelector(".catg-list");
+
 
 let user_data;
 let prod_data;
@@ -69,10 +69,10 @@ function renderProductCard(product){
     const image = document.createElement("img");
     const name = document.createElement("h3");
     const value = document.createElement("p");
-    const addCart = document.createElement("button");
+    
 
     contain.dataset.product = items;
-    contain.style.cursor = 'pointer';
+    contain.style.cursor = 'Default';
     
 
 
@@ -94,18 +94,6 @@ function renderProductCard(product){
 
     row.appendChild(contain);
   }
-}
-
-function toPrice(num){
-  let newNum = num;
-  let text = newNum % 1000 + "";
-  newNum = Math.floor(newNum / 1000);
-  while(newNum > 1000) {
-    text = newNum % 1000 + "," + text;
-    newNum = Math.floor(newNum / 1000);
-  }
-  text = newNum + "," + text;
-  return text;
 }
 
 window.onload = getData();
