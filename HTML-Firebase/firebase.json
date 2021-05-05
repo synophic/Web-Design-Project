@@ -8,14 +8,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "redirects": 
-      [
-      {
-        "source": "/test2",
-        "destination": "public/test2.html"
-      }
-     
     ]
   }
 }

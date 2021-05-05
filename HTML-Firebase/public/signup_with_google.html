@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup_auth_google.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Sign up</title>
+  
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img src="image/joystick.svg" class="basket_btn">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SHOP</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">ACCOUNT</a>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="search-nav">
+                    <ul class="navbar-nav nav-form">
+                        <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="search" aria-label="Search">
+                            <img src="image/search.svg" class="search_btn">
+                        </form>
+                    </ul>
+                </div>
+                <img src="image/basket2-fill.svg" class="basket_btn">
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <img width="10%" src="/imge-signin/user (1).png" alt="">
+
+                <center>
+                    <!-- <form >
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="inputUsername" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div> -->
+                        <!-- <div class="form-group">
+                <label class="form-check-label"><input type="checkbox"> Remember me</label>
+            </div> -->
+                        <button type="submit" class="submit-btn" onclick="GoogleLogin()">Sign up with Google</button>
+                    <!-- </form> -->
+                </center>
+            </div>
+        </div>
+
+
+
+    </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBacuLY-DF_5trTQwMd0AkfCQ5MBgPYEdE",
+    authDomain: "web-design-javascript-la-deecb.firebaseapp.com",
+    databaseURL: "https://web-design-javascript-la-deecb-default-rtdb.firebaseio.com",
+    projectId: "web-design-javascript-la-deecb",
+    storageBucket: "web-design-javascript-la-deecb.appspot.com",
+    messagingSenderId: "109916466447",
+    appId: "1:109916466447:web:07e601e728bbcd8648e27a",
+    measurementId: "G-FNB9ZQVMY4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  document.getElementById('dashboard').style.display="none"
+  document.getElementById('login').addEventListener('click', GoogleLogin)
+  document.getElementById('logout').addEventListener('click', LogoutUser)
+
+  let provider = new firebase.auth.GoogleAuthProvider()
+
+
+  function GoogleLogin(){
+
+  }
+  function GoogleLogin(){
+    let provider = new firebase.auth.GoogleAuthProvider()
+
+    console.log('Login Btn Call')
+    firebase.auth().signInWithPopup(provider).then(result =>{
+    console.log(result.user)
+    checkAuthState()
+      // window.location = "signup.html"
+    //   document.getElementById('LoginScreen').style.display="none"
+    //   document.getElementById('dashboard').style.display="block"
+      
+//       showUserDetails(result.user)
+//     }).catch(e =>{
+//       console.log(e)
+//     })
+//   }
+
+//   function showUserDetails(user){
+//     document.getElementById('userDetails').innerHTML = `
+//     <img src="${user.photoURL}" style ="width:10%">
+//     <p>Name: ${user.displayName}</p>
+//     <p>Email: ${user.email}</p>
+// `
+//   }
+
+  function checkAuthState(){
+    firebase.auth().onAuthStateChanged(user=>{
+      if(user){
+
+    //   ลองเปลี่ยนไปหน้าหลักที
+
+
+        // document.getElementById('LoginScreen').style.display="none"
+        // document.getElementById('dashboard').style.display="block"
+        // showUserDetails(user)
+      }else{
+
+      }
+    })
+    }
+  
+
+//   function LogoutUser(){
+//     console.log('Logout Btn Call')
+//     firebase.auth().signOut().then(()=>{
+//       document.getElementById('LoginScreen').style.display="block"
+//       document.getElementById('dashboard').style.display="none"
+//     }).catch(e=>{
+//       console.log(e)
+//     })
+//   }
+//   checkAuthState()
+
+//   firebase.analytics();
+</script>
+</html>
