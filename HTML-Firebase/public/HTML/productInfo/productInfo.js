@@ -25,7 +25,7 @@ function getData() {
       downloadContent(prod_data);
     } else {
       console.log("No Product data available");
-      prod_data_data = "";
+      prod_data = "";
     }
   });
   soldRec.orderByChild("id").on("value", (snapshot) => {
@@ -52,17 +52,18 @@ function renderCatagoryList(catagoryList){
 	CATAGORY_LIST_CONTAINER.innerHTML = "";
 	for (let i in catagoryList) {
 		CATAGORY_LIST_CONTAINER.appendChild(
-			createCatagoryList(catagoryList[i])
+			createCatagoryList(catagoryList[i], i)
 			);
 	}
 }
 
-function createCatagoryList(text){
+function createCatagoryList(text, i){
 	const li = document.createElement("li");
 	const a = document.createElement("a");
 	li.classList.add("catg-item");
 	a.innerHTML = text;
 	li.appendChild(a);
+  li.onclick = function() {window.document.location = "../shop/shop.html" + "?catagory=" + catg_data[i]};
 	return li;
 }
 
