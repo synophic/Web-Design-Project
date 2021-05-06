@@ -50,7 +50,7 @@
         <label for="signInPassword">password</label>
         <input type="password" id="signInPassword" class="form-control" name="">
         <button onclick="toSignUp()" id="toSignUp">Doesn't have an account? sign up</button>
-        <button class="subnit">sign in</button>
+        <button class="submit-btn" onclick="userSignIn()">sign in</button>
     </div>
 
     <div class="container signForm" id="signUp">
@@ -58,14 +58,15 @@
         <label for="signUpEmail">Email</label>
         <input type="email" id="signUpEmail" class="form-control">
         <label for="signUpPassword">password</label>
-        <input type="email" id="signUpEmail" class="form-control">
+        <input type="password" id="signUpPassword" class="form-control">
         <label for="signUpName">Name</label>
         <input type="text" id="signUpName" class="form-control">
         <label for="signUpSName">Surname</label>
         <input type="text" id="signUpSName" class="form-control">
         <label for="signUpAge">Age</label>
         <input type="number" id="signUpAge" class="form-control">
-        <button class="subnit">sign up</button>
+        <button onclick="userCheck()" id="toSignIn">Already have an account. Sign in.</button>
+        <button class="submit-btn" onclick="userSignUp()">sign up</button>
     </div>
 
     <div class="container signForm text-center" id="account">

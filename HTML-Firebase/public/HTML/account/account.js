@@ -7,34 +7,38 @@ const signIn = document.querySelector("#signIn");
 const signUp = document.querySelector("#signUp");
 const account = document.querySelector("#account");
 
+let uid;
 let user_data;
 let prod_data;
 let sold_data;
 let catg_data;
 
+firebase.auth().on
+
 function userCheck() {
 
-  var user = firebase.auth().currentUser;
-  if (user == null) {
-    signIn.style.display = "flex";
-    signUp.style.display = "none";
-    account.style.display = "none";
-  }
-  else if (user != null) {
-    signIn.style.display = "none";
-    signUp.style.display = "none";
-    account.style.display = "flex";
-  }
+  var user = firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      signIn.style.display = "none";
+      signUp.style.display = "none";
+      account.style.display = "flex";
+      document.querySelector("#name").innerHTML = user_data[user.uid].name + " " + user_data[user.uid].surName;
+      console.log(user);
+    } else {
+      signIn.style.display = "flex";
+      signUp.style.display = "none";
+      account.style.display = "none";
+    }
+  });
 }
 
 function userSignOut() {
   firebase.auth().signOut().then(() => {
-    signIn.style.display = "flex";
-    signUp.style.display = "none";
-    account.style.display = "none";
+    
   }).catch((error) => {
   // An error happened.
   });
+  userCheck();
 }
 
 function toSignUp() {
@@ -43,10 +47,51 @@ function toSignUp() {
   account.style.display = "none";
 }
 
+function userSignUp() {
+  const email = document.querySelector("#signUpEmail").value;
+  const password = document.querySelector("#signUpPassword").value;
+  const name = document.querySelector("#signUpName").value;
+  const surname = document.querySelector("#signUpSName").value;
+  const age = document.querySelector("#signUpAge").value;
+
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    var user = userCredential.user;
+    firebase.database().ref("user/" + user.uid).set({
+      "name": name,
+      "surName": surname,
+      "age": age
+    }).catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+    userCheck();
+    console.log("add data complete")
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+}
+
+function userSignIn() {
+  const email = document.querySelector("#signInEmail").value;
+  const password = document.querySelector("#signInPassword").value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    userCheck();
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+}
+
 function getData() {
   user.orderByChild("id").on("value", (snapshot) => {
     if (snapshot.exists()) {
     	user_data = snapshot.val();
+      userCheck();
     } else {
       console.log("No User data available");
       user_data = "";
@@ -82,4 +127,4 @@ function getData() {
   });
 }
 
-window.onload = userCheck();
+window.onload = getData();
