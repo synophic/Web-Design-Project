@@ -88,14 +88,14 @@ body {
 .sub-container h4 {
   font-weight: bold;
   color: #707070;
-  font-size: 12pt;
+  font-size: 12pt!important;
+
 }
 
 .submit-btn {
 	background-color: #C30DA4;
 	color: white;
 	padding: 10px 20px;
-	width: 40%;
 	margin: 15px;
 	border-style: none;
 	border-radius: 15px;
