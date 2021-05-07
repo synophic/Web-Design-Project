@@ -3,6 +3,7 @@ body {
 }
 
 .navbar {
+	position: fixed;
 	background-color: white;
 }
 
@@ -18,9 +19,9 @@ body {
 	margin: 0 2vw;
 }
 
-.search-nav,.nav-item {
+/* .search-nav,.nav-item {
 	margin: 0 2vw;
-}
+} */
 
 .nav-link {
 	color: #707070;
@@ -171,3 +172,4 @@ footer .mb-4 img{
 	margin: 5px;
 
 }
+

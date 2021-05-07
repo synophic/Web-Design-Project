@@ -35,7 +35,7 @@ body {
 }
 
 .container {
-	width: 40%!important;
+	max-width: 40%!important;
 	margin: 2% 20%;
 	background-color: white;
 	padding: 2% 10% 2% 10%;
@@ -50,11 +50,11 @@ body {
 	margin-bottom: 10%;
 }
 
-.container .col-sm-12 {
+/* .container .col-sm-12 {
     padding-left: 3%;
     padding-right: 3%;
 
-}
+} */
 
 
 .submit-btn {
@@ -96,5 +96,11 @@ h3 {
     border: none;
     color: #C30DA4;
 } */
+
+
+
+.card-title{
+	color:#D50EB4;
+}
 
 

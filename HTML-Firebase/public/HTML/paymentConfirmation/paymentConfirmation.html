@@ -44,67 +44,28 @@
     </nav>
 
 
-    <div class="container">
-        <div class=" text-center">
-            <h3>CONFIRM PAYMENT</h3>
-            <br>
-            <img width="30px" src="/imge-page9/k.png" alt="">
-            <p>000-x-xxxxx-x</p>
+    <div class="card w-75 mx-auto my-5" style="background-color:white; border-radius: 15px;">
+        <div class="card-body">
+          <h2 class="card-title text-center py-3" style="border-width: 10px; ">CONFIRM PAYMENT</h2>
+          <img class="rounded d-block mx-auto py-3" style="max-width: 10%;" src="../../image/paymentConfirmation/kbank.png" alt=""><br>
+          <h6 class="card-text text-center">K Bank</h6><br>
+          <h6 class="card-text text-center">000-x-xxxxx-x</h6><br>
+          <h6 class="card-text text-center">Total Price : 3846 Baht</h6><br>
+          <p class="card-text mx-auto col-7">
+          <label for="formFileSm" class="form-label"><h7>Enter a picture of evidence of payment :</h7></label>
+          <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
+                class="form-control form-control-sm" id="formFileSm" type="file" /></p>
 
-            <p>Total Price : 3846 Baht</p>
-
-
-            <!-- output img -->
-            <p><img id="output" width="200" /></p>
-
-        </div>
-
-
-        <div class="row">
-            <div class="col-sm-12">
-                <label for="formFileSm" class="form-label">Enter a picture of evidence of payment :</label>
-
-            </div>
-            <div class="col-sm-12">
-                <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
-                    class="form-control form-control-sm" id="formFileSm" type="file" />
-
-            </div>
-
-
-        </div>
-
-        <!-- input date -->
-
-        <div class="row">
-            <div class="col-sm-12">
-                <label for="example-date-input" class="col-form-label">Evidence-based transfer date :</label>
-
-            </div>
-            <div class="col-sm-12">
-                <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-
-            </div>
-
-
-        </div>
-
-        <!-- input time -->
-        <div class="row">
-            <div class="col-sm-12">
+                <p class="card-text mx-auto col-7">   <label for="example-date-input" class="col-form-label ">Evidence-based transfer date :
+                </label>
+                <input class="form-control" type="date" value="2011-08-19" id="example-date-input"></p>
+                <p class="card-text mx-auto col-7"> 
                 <label for="example-time-input" class="col-form-label">Evidence-based transfer time :</label>
+                <input class="form-control" type="time" value="13:45:00" id="example-time-input"></p>
 
-            </div>
-            <div class="col-sm-12">
-                <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-            </div>
+         <center> <a href="#" class="btn my-3" style="background-color: #D50EB4; color: white;">Confirm Payment</a></center>
         </div>
-
-
-
-        <center><button class="submit-btn">Confirm</button></center>
-    </div>
-
+      </div>
 
 
 
