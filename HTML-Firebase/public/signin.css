@@ -34,13 +34,15 @@ body {
 	border-bottom: 3px solid #D50EB4;
 }
 
-.container {
-	max-width: 40%!important;
-	margin: 2% 20%;
+.container  {
+	width: 30%!important;
+	margin: 10% 20%;
 	background-color: white;
 	padding: 2% 10% 2% 10%;
 	border-radius: 15px;
 }
+
+
 
 .container h1 {
 	text-align: center;
@@ -50,11 +52,7 @@ body {
 	margin-bottom: 10%;
 }
 
-/* .container .col-sm-12 {
-    padding-left: 3%;
-    padding-right: 3%;
 
-} */
 
 
 .submit-btn {
@@ -62,13 +60,13 @@ body {
 	color: white;
 	padding: 10px 20px;
 	width: 40%;
-	margin: 15px;
+	/* margin: 15px; */
 	border-style: none;
 	border-radius: 15px;
     font-weight:500;
 }
 
-.container .list-group .list-group-item{
+/* .container .list-group .list-group-item{
 
     color: #707070;
     font-weight:500;
@@ -89,105 +87,82 @@ h3 {
 
 
 
-}
-/* .container .list-group .list-group-item a :hover{
-
-    text-decoration: none;
-    border: none;
-    color: #C30DA4;
 } */
+.form-group {
+    margin: 5% ;
+    width: 80%;
+    
 
 
-
-.card-title{
-	color:#D50EB4;
 }
+.form-group #inputEmail, #inputPassword {
+    background:#D2D2D2;
+}
+
 
 
 
 @media only screen and (max-width: 991px) {
-  
-    /* .submit-btn {
-        background-color: #C30DA4;
-        color: white;
-
-        width: 50%;
-   
-        border-style: none;
-        border-radius: 10px;
-        font-weight:500;
-        font-size: 100%;
-    } */
-
-    .container {
-		max-width: 70%!important;
-		/* margin: 2% 20%;
-		background-color: white;
-		padding: 2% 10% 2% 10%; */
-		border-radius: 15px;
-	}
-	
-    
-  }
-
-
-  @media only screen and (max-width: 768px) {
-  
-    /* .submit-btn {
-        background-color: #C30DA4;
-        color: white;
-
-        width: 50%;
-   
-        border-style: none;
-        border-radius: 10px;
-        font-weight:500;
-        font-size: 100%;
-    } */
-
-    .container {
-		max-width: 70%!important;
-		/* margin: 2% 20%;
-		background-color: white;
-		padding: 2% 10% 2% 10%; */
-		border-radius: 15px;
-	}
-	
-    
-  }
-
-
-@media only screen and (max-width: 576px) {
-    /* .form-group {
+    .form-group {
         margin: 3%;
         width: 80%;
         height: 10%;
         font-size: 50%;
     
     
-    } */
+    }
 
-    /* .submit-btn {
+    .submit-btn {
         background-color: #C30DA4;
         color: white;
-        
+
         width: 50%;
-        
+   
         border-style: none;
         border-radius: 10px;
         font-weight:500;
         font-size: 100%;
-    } */
+    }
 
-    .container {
-        width: 75%!important;
+    .container  {
+        width: 35%!important;
+      
+    }
+    
+  }
+
+
+@media only screen and (max-width: 576px) {
+    .form-group {
+        margin: 3%;
+        width: 80%;
+        height: 10%;
+        font-size: 50%;
+    
+    
+    }
+
+    .submit-btn {
+        background-color: #C30DA4;
+        color: white;
+        /* padding: 10px 20px; */
+        width: 50%;
+        /* height: 10%; */
+        /* margin: 15px; */
+        border-style: none;
+        border-radius: 10px;
+        font-weight:500;
+        font-size: 100%;
+    }
+
+    .container  {
+        width: 50%!important;
         /* margin: 10% 20%; */
         background-color: white;
         /* padding: 2% 10% 2% 10%; */
         border-radius: 15px;
     }
-
-	
+    
     
   }
 
