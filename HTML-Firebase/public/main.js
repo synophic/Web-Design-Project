@@ -43,4 +43,8 @@ function getData() {
   });
 }
 
+function shopCatagory(catg) {
+  window.document.location = "HTML/shop/shop.html" + "?catagory=" + catg;
+}
+
 window.onload = getData();
