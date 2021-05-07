@@ -208,6 +208,7 @@ function downloadContent(product){
   addContain.appendChild(inpCol);
 
   button.innerHTML = "Add to cart";
+  button.classList.add("addBtn")
   button.onclick = function() {addToCart()}
   btnCol.appendChild(button);
   addContain.appendChild(btnCol);
