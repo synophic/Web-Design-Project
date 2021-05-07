@@ -130,6 +130,10 @@ body {
 	margin: 10% 5% 0 0;
 }
 
+#quantity {
+	text-align: center;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
