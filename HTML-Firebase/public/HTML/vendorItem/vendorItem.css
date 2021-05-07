@@ -40,8 +40,16 @@ input::-webkit-inner-spin-button {
 	border-bottom: 3px solid #D50EB4;
 }
 
-.container {
-	width: 40%!important;
+/* .container {
+	width: 50%;
+	margin: 2% 20%;
+	background-color: white;
+	border-radius: 15px;
+	padding: 2%!important;
+} */
+
+#cart.container{
+	width: 90%;
 	margin: 2% 20%;
 	background-color: white;
 	border-radius: 15px;
@@ -121,3 +129,23 @@ input::-webkit-inner-spin-button {
 .submit-btn:hover {
 	background-color: #9A0B82;
 }
+
+
+@media (min-width: 576px) { 
+	#cart.container{
+		width:70%;
+	}
+
+ }
+
+ @media (min-width: 768px) {
+	#cart.container{
+		width:50%;
+	}
+ }
+
+ @media (min-width: 992px) {
+	#cart.container{
+		width:40%;
+	}
+  }
