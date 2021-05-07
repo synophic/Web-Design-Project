@@ -43,7 +43,7 @@
             </div>
         </div>
     </nav>
-
+<!-- 
     <div class="sub-container">
         <h1>YOUR ORDER</h1>
         <img src="../../image/orderCheckout/ip12pm.png">
@@ -72,11 +72,33 @@
         <h4>ToTal Price : ฿100,199</h4>
         
         <center>
-            <button class="submit-btn" onclick="uploadData()">Confirm Order</button>
+            <button class="submit-btn col-lg-10" onclick="uploadData()">Confirm Order</button>
         </center>
              
         
-    </div>
+    </div> -->
+
+    <div class="card w-75 mx-auto my-5" style="background-color:white; border-radius: 15px;">
+        <div class="card-body">
+          <h2 class="card-title text-center py-3" style="border-width: 50px; color: #D50EB4;">YOUR ORDER</h2>
+          <img class="rounded d-block mx-auto" style="max-width:40%" src="../../image/orderCheckout/ip12pm.png" alt="">
+          <h6 class="card-text text-center">iPhone 12 Pro Max (128 GB)</h6>
+          <h6 class="card-text text-center">28,000 Bath</h6>
+          <h6 class="card-text text-center">1 pcs</h6><br>
+          <p class="card-text mx-auto col-7"><label for="formFileSm" class="form-label">Enter a picture of evidence of payment :</label>
+          <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
+                class="form-control form-control-sm" id="formFileSm" type="file" /></p>
+
+                <p class="card-text mx-auto col-7">   <label for="example-date-input" class="col-form-label ">Evidence-based transfer date :
+                </label>
+                <input class="form-control" type="date" value="2011-08-19" id="example-date-input"></p>
+                <p class="card-text mx-auto col-7"> 
+                <label for="example-time-input" class="col-form-label">Evidence-based transfer time :</label>
+                <input class="form-control" type="time" value="13:45:00" id="example-time-input"></p>
+
+         <center> <a href="#" class="btn my-3" style="background-color: #D50EB4; color: white;;">Confirm Payment</a></center>
+        </div>
+      </div>
     
 
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->

@@ -41,11 +41,15 @@ input::-webkit-inner-spin-button {
 }
 
 .container {
-	width: 40%!important;
+	width: 40%;
 	margin: 2% 20%;
 	background-color: white;
 	padding: 2% 10% 2% 10%;
 	border-radius: 15px;
+}
+
+.container.signForm{
+	margin-top: 25px;
 }
 
 .container h1 {
@@ -119,3 +123,23 @@ h3 {
 	background-color: white;
 	color: blue;
 }
+
+@media (min-width: 576px) { 
+	.container.signForm{
+		width:70%;
+	}
+
+	
+ }
+
+ @media (min-width: 768px) {
+	.container.signForm{
+		width:60%;
+	}
+ }
+
+ @media (min-width: 992px) {
+	.container.signForm{
+		width:50%;
+	}
+  }
