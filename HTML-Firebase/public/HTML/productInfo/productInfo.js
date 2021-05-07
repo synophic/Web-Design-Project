@@ -2,6 +2,7 @@ var user = firebase.database().ref("user");
 var product = firebase.database().ref("product");
 var soldRec = firebase.database().ref("soldRec");
 var catagory = firebase.database().ref("catagory");
+var cart = firebase.database().ref("cart");
 
 let CATAGORY_LIST_CONTAINER = document.querySelector(".catg-list");
 
@@ -9,6 +10,8 @@ let user_data;
 let prod_data;
 let sold_data;
 let catg_data;
+let cart_data;
+let getProduct
 
 function getData() {
   user.orderByChild("id").on("value", (snapshot) => {
@@ -45,7 +48,14 @@ function getData() {
       catg_data = "";
     }
   });
-
+  cart.orderByChild("id").on("value", (snapshot) => {
+    if (snapshot.exists()) {
+      cart_data = snapshot.val();
+    } else {
+      console.log("No Catagory data available");
+      cart_data = "";
+    }
+  });
 }
 
 function renderCatagoryList(catagoryList){
@@ -68,7 +78,7 @@ function createCatagoryList(text, i){
 }
 
 function downloadContent(product){
-  let getProduct = document.location.search.replace(/^.*?\=/,"");
+  getProduct = document.location.search.replace(/^.*?\=/,"");
   const container = document.querySelector("#preview");
 
   const imgContent = document.createElement("div");
@@ -116,7 +126,7 @@ function downloadContent(product){
 
   const tag = document.createElement("div");
   const taglink = document.createElement("a");
-  taglink.innerHTML = "smartphone";
+  taglink.innerHTML = product[getProduct].catagory;
   tag.appendChild(taglink);
   datailContent.appendChild(tag);
 
@@ -170,22 +180,35 @@ function downloadContent(product){
   plus.innerHTML = "+";
   plus.classList.add("btn");
   plus.classList.add("btn-outline-secondary");
+  plus.onclick = function() {
+    let input = document.querySelector("#quantity");
+    input.value = parseInt(input.value) + 1;
+    quantityCheck()
+  }
   minus.innerHTML = "-";
   minus.classList.add("btn");
   minus.classList.add("btn-outline-secondary");
+  minus.onclick = function() {
+    let input = document.querySelector("#quantity");
+    input.value = parseInt(input.value) - 1;
+    quantityCheck()
+  }
   input.type = "number";
   input.id = "quantity";
   input.classList.add("form-control");
   input.min = "1";
+  input.value = "1"
+  input.onchange = function() {quantityCheck()}
   input.max = product[getProduct].quantity;
 
-  inpControl.appendChild(plus);
-  inpControl.appendChild(input);
   inpControl.appendChild(minus);
+  inpControl.appendChild(input);
+  inpControl.appendChild(plus);
   inpCol.appendChild(inpControl);
   addContain.appendChild(inpCol);
 
   button.innerHTML = "Add to cart";
+  button.onclick = function() {addToCart()}
   btnCol.appendChild(button);
   addContain.appendChild(btnCol);
   datailContent.appendChild(addContain);
@@ -196,6 +219,24 @@ function downloadContent(product){
   datailContent.appendChild(description);
 
   container.appendChild(datailContent);
+}
+
+function addToCart() {
+  var user = firebase.auth().currentUser;
+  let input = document.querySelector("#quantity").value;
+
+  if (user) {
+    cart.child(user.uid).child(getProduct).set(parseInt(input));
+    alert("Product has been add to your cart.")
+  } else {
+    window.document.location = "../account/account.html";
+  }
+}
+
+function quantityCheck() {
+  let input = document.querySelector("#quantity");
+  if (parseInt(input.value) > parseInt(input.max)) input.value = input.max;
+  else if (parseInt(input.value) < parseInt(input.min)) input.value = input.min;
 }
 
 function toPrice(num){
