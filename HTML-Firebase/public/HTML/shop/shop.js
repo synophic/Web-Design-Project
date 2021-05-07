@@ -47,73 +47,93 @@ function renderCatagoryList(catagoryList){
 	CATAGORY_LIST_CONTAINER.innerHTML = "";
 	for (let i in catagoryList) {
 		CATAGORY_LIST_CONTAINER.appendChild(
-			createCatagoryList(catagoryList[i])
+			createCatagoryList(catagoryList[i], i)
 			);
 	}
 }
 
-function createCatagoryList(text){
+function createCatagoryList(text, i){
 	const li = document.createElement("li");
 	const a = document.createElement("a");
 	li.classList.add("catg-item");
 	a.innerHTML = text;
+  li.dataset.catagory = catg_data[i]
 	li.appendChild(a);
+  li.onclick = function() {window.document.location = "shop.html" + "?catagory=" + catg_data[i]};
 	return li;
 }
 
 function renderProductCard(product){
+  let getProduct = document.location.search.replace(/^.*?\=/,"");
   const row = document.querySelector("#list");
   for (let items in product) {
-    const contain = document.createElement("div");
-    const card = document.createElement("div");
-    const imgBorder = document.createElement("div");
-    const image = document.createElement("img");
-    const name = document.createElement("h3");
-    const value = document.createElement("p");
-    const addCart = document.createElement("button");
-
-    contain.classList.add("col-md-4");
-    contain.classList.add("col-lg-3");
-    contain.dataset.product = items;
-    contain.style.cursor = 'pointer';
-    contain.style.height = "350px";
-    contain.onclick = function() {window.document.location = "../productInfo/productInfo.html" + "?product=" + this.dataset.product};
-
-    card.classList.add("card");
-
-    imgBorder.classList.add("imgBorder")
-
-    for (let j in product[items].images) {
-      image.src = product[items].images[j];
-      imgBorder.appendChild(image);
-      break;
+    if (getProduct != "") {
+      if (product[items].catagory == getProduct) {
+        row.appendChild(createProduct(items, product));
+      }
     }
-
-    name.innerHTML = product[items].name;
-    value.innerHTML = "฿" + toPrice(product[items].price);
-    addCart.innerHTML = "Add to Cart";
-
-    card.appendChild(imgBorder);
-    card.appendChild(name);
-    card.appendChild(value);
-    card.appendChild(addCart);
-
-    contain.appendChild(card);
-
-    row.appendChild(contain);
+    else {
+      row.appendChild(createProduct(items, product));
+    }
   }
+}
+
+function createProduct(items, product) {
+  const contain = document.createElement("div");
+  const card = document.createElement("div");
+  const imgBorder = document.createElement("div");
+  const image = document.createElement("img");
+  const name = document.createElement("h3");
+  const value = document.createElement("p");
+  const addCart = document.createElement("button");
+
+  contain.classList.add("col-md-4");
+  contain.classList.add("col-lg-3");
+  contain.dataset.product = items;
+  contain.style.cursor = 'pointer';
+  contain.style.height = "350px";
+  contain.onclick = function() {window.document.location = "../productInfo/productInfo.html" + "?product=" + this.dataset.product};
+
+  card.classList.add("card");
+
+  imgBorder.classList.add("imgBorder")
+
+  for (let j in product[items].images) {
+    image.src = product[items].images[j];
+    imgBorder.appendChild(image);
+    break;
+  }
+
+  name.innerHTML = product[items].name;
+  value.innerHTML = "฿" + toPrice(product[items].price);
+  addCart.innerHTML = "Add to Cart";
+
+  card.appendChild(imgBorder);
+  card.appendChild(name);
+  card.appendChild(value);
+  card.appendChild(addCart);
+
+  contain.appendChild(card);
+  return contain;
 }
 
 function toPrice(num){
   let newNum = num;
-  let text = newNum % 1000 + "";
+  let text = newNum % 1000 +"";
+  console.log("value: " + num + " text: " + text.length);
+  if (text.length == "1") text = "00" + text;
+  else if (text.length == "2") text = "0" + text;
+  let allText = text;
   newNum = Math.floor(newNum / 1000);
   while(newNum > 1000) {
-    text = newNum % 1000 + "," + text;
+    text = newNum % 1000 +"";
+    if (text.length == 1) text = "00" + text;
+    else if (text.length == 2) text = "0" + text;
     newNum = Math.floor(newNum / 1000);
+    allText = text + "," + allText;
   }
-  text = newNum + "," + text;
-  return text;
+  allText = newNum + "," + allText;
+  return allText;
 }
 
 window.onload = getData();

@@ -2,6 +2,12 @@ body {
 	background-color: #E8E8E8!important;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .search_btn {
 	padding: 10px;
 	background-color: #A8A7A7;
@@ -50,8 +56,6 @@ body {
 	margin-bottom: 10%;
 }
 
-
-
 .submit-btn {
 	background-color: #C30DA4;
 	color: white;
@@ -61,6 +65,11 @@ body {
 	border-style: none;
 	border-radius: 15px;
     font-weight:500;
+    align-self: center;
+}
+
+.submit-btn:hover {
+	background-color: #9A0B82;
 }
 
 .container .list-group .list-group-item{
@@ -78,7 +87,7 @@ body {
 }
 
 .container .list-group .list-group-item:hover {
-	background-color: gray;
+	background-color: #f6f6f6;
 }
 
 h3 {
@@ -87,7 +96,7 @@ h3 {
 
 .signForm {
 	padding: 3%!important;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -104,32 +113,9 @@ h3 {
 	align-self: flex-end;
 }
 
-#toSignUp {
+#toSignUp, #toSignIn {
 	border: none;
 	text-align: end;
 	background-color: white;
 	color: blue;
 }
-
-.subnit {
-	margin-top: 10%;
-	padding: 15px;
-	width: 40%;
-	border-radius: 15px;
-	border: none;
-	align-self: center;
-	background-color: #C30DA4;
-	color: white;
-} 
-
-.subnit:hover {
-	background-color: #9A0B82;
-}
-/* .container .list-group .list-group-item a :hover{
-
-    text-decoration: none;
-    border: none;
-    color: #C30DA4;
-} */
-
-
