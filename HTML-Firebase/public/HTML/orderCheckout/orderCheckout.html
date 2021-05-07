@@ -85,18 +85,19 @@
           <h6 class="card-text text-center">iPhone 12 Pro Max (128 GB)</h6>
           <h6 class="card-text text-center">28,000 Bath</h6>
           <h6 class="card-text text-center">1 pcs</h6><br>
-          <p class="card-text mx-auto col-7"><label for="formFileSm" class="form-label">Enter a picture of evidence of payment :</label>
-          <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
-                class="form-control form-control-sm" id="formFileSm" type="file" /></p>
+          <div class="">
+            <h4>County : </h4><select name="subject" id="subject">
+                <option value="" selected="selected">-- Select --</option>
+            </select>
+            <h4>Shipment Address : </h4><select name="topic" id="topic">
+                <option value="" selected="selected">-- Select --</option>
+            </select>
+            <h4>Shipment : </h4><select name="chapter" id="chapter">
+                <option value="" selected="selected">-- Select --</option>
+            </select><br><br>
+          </div>
 
-                <p class="card-text mx-auto col-7">   <label for="example-date-input" class="col-form-label ">Evidence-based transfer date :
-                </label>
-                <input class="form-control" type="date" value="2011-08-19" id="example-date-input"></p>
-                <p class="card-text mx-auto col-7"> 
-                <label for="example-time-input" class="col-form-label">Evidence-based transfer time :</label>
-                <input class="form-control" type="time" value="13:45:00" id="example-time-input"></p>
-
-         <center> <a href="#" class="btn my-3" style="background-color: #D50EB4; color: white;;">Confirm Payment</a></center>
+         <center> <a href="#" class="btn my-3" style="background-color: #D50EB4; color: white;">Confirm Order</a></center>
         </div>
       </div>
     
