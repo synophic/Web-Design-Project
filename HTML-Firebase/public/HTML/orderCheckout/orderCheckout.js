@@ -62,7 +62,7 @@ function renderCatagoryList(catagoryList){
 }
 
 function createCatagoryList(text){
-<<<<<<< HEAD
+
   const li = document.createElement("li");
   const a = document.createElement("a");
   li.classList.add("catg-item");
@@ -104,14 +104,14 @@ function renderProductCard(product){
 
     row.appendChild(contain);
   }
-=======
+
 	const li = document.createElement("li");
 	const a = document.createElement("a");
 	li.classList.add("catg-item");
 	a.innerHTML = text;
 	li.appendChild(a);
 	return li;
->>>>>>> 01c45aca902ea17543e68fd10a55ab0e12186432
+
 }
 
 window.onload = getData();

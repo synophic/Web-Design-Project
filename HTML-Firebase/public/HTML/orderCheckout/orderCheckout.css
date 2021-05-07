@@ -104,3 +104,57 @@ body {
 .submit-btn:hover {
 	background-color: #9A0B82;
 }
+
+.container{
+  max-width: 30%!important;
+  margin: 2% 10%;
+  background-color: white;
+  padding: 2% 10% 2% 10%;
+  border-radius: 15px;
+
+}
+
+@media only screen and (max-width: 991px) {
+  
+
+  .container {
+  max-width: 60%!important;
+  /* margin: 2% 20%;
+  background-color: white;
+  padding: 2% 10% 2% 10%; */
+  border-radius: 15px;
+}
+
+  
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  
+  .container {
+  max-width: 70%!important;
+  /* margin: 2% 20%;
+  background-color: white;
+  padding: 2% 10% 2% 10%; */
+  border-radius: 15px;
+}
+
+  
+}
+
+
+@media only screen and (max-width: 576px) {
+ 
+  .container {
+      width: 75%!important;
+      /* margin: 10% 20%; */
+      background-color: white;
+      /* padding: 2% 10% 2% 10%; */
+      border-radius: 15px;
+  }
+
+
+  
+}
+
