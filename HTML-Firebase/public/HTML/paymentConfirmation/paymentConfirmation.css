@@ -104,3 +104,92 @@ h3 {
 }
 
 
+
+@media only screen and (max-width: 991px) {
+  
+    /* .submit-btn {
+        background-color: #C30DA4;
+        color: white;
+
+        width: 50%;
+   
+        border-style: none;
+        border-radius: 10px;
+        font-weight:500;
+        font-size: 100%;
+    } */
+
+    .container {
+		max-width: 70%!important;
+		/* margin: 2% 20%;
+		background-color: white;
+		padding: 2% 10% 2% 10%; */
+		border-radius: 15px;
+	}
+	
+    
+  }
+
+
+  @media only screen and (max-width: 768px) {
+  
+    /* .submit-btn {
+        background-color: #C30DA4;
+        color: white;
+
+        width: 50%;
+   
+        border-style: none;
+        border-radius: 10px;
+        font-weight:500;
+        font-size: 100%;
+    } */
+
+    .container {
+		max-width: 70%!important;
+		/* margin: 2% 20%;
+		background-color: white;
+		padding: 2% 10% 2% 10%; */
+		border-radius: 15px;
+	}
+	
+    
+  }
+
+
+@media only screen and (max-width: 576px) {
+    /* .form-group {
+        margin: 3%;
+        width: 80%;
+        height: 10%;
+        font-size: 50%;
+    
+    
+    } */
+
+    /* .submit-btn {
+        background-color: #C30DA4;
+        color: white;
+        
+        width: 50%;
+        
+        border-style: none;
+        border-radius: 10px;
+        font-weight:500;
+        font-size: 100%;
+    } */
+
+    .container {
+        width: 75%!important;
+        /* margin: 10% 20%; */
+        background-color: white;
+        /* padding: 2% 10% 2% 10%; */
+        border-radius: 15px;
+    }
+
+	
+    
+  }
+
+
+
