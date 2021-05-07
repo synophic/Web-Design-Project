@@ -126,7 +126,7 @@ h3 {
 
 @media (min-width: 576px) { 
 	.container.signForm{
-		width:70%;
+		width:60%;
 	}
 
 	
@@ -134,12 +134,12 @@ h3 {
 
  @media (min-width: 768px) {
 	.container.signForm{
-		width:60%;
+		width:50%;
 	}
  }
 
  @media (min-width: 992px) {
 	.container.signForm{
-		width:50%;
+		width:35%;
 	}
   }
