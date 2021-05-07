@@ -1,5 +1,6 @@
 var user = firebase.database().ref("user");
 var product = firebase.database().ref("product");
+var soldRec = firebase.database().ref("soldRec");
 var catagory = firebase.database().ref("catagory");
 
 
@@ -12,7 +13,7 @@ let catg_data;
 function getData() {
   user.orderByChild("id").on("value", (snapshot) => {
     if (snapshot.exists()) {
-      user_data = snapshot.val();
+    	user_data = snapshot.val();
     } else {
       console.log("No User data available");
       user_data = "";
@@ -21,18 +22,26 @@ function getData() {
   });
   product.orderByChild("id").on("value", (snapshot) => {
     if (snapshot.exists()) {
-      prod_data = snapshot.val();
-      renderProductCard(prod_data);
+    	prod_data = snapshot.val();
     } else {
       console.log("No Product data available");
       prod_data_data = "";
       // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
     }
   });
+  soldRec.orderByChild("id").on("value", (snapshot) => {
+    if (snapshot.exists()) {
+    	sold_data = snapshot.val();
+    } else {
+      console.log("No Sold record data available");
+      sold_data = "";
+      // 1.2) Set Display condition: When it doesn't have any data you must hide a remove button.
+    }
+  });
   catagory.orderByChild("id").on("value", (snapshot) => {
     if (snapshot.exists()) {
-      catg_data = snapshot.val();
-      renderCatagoryList(catg_data);
+    	catg_data = snapshot.val();
+    	renderCatagoryList(catg_data);
     } else {
       console.log("No Catagory data available");
       catg_data = "";
@@ -44,15 +53,16 @@ function getData() {
 }
 
 function renderCatagoryList(catagoryList){
-  CATAGORY_LIST_CONTAINER.innerHTML = "";
-  for (let i in catagoryList) {
-    CATAGORY_LIST_CONTAINER.appendChild(
-      createCatagoryList(catagoryList[i])
-      );
-  }
+	CATAGORY_LIST_CONTAINER.innerHTML = "";
+	for (let i in catagoryList) {
+		CATAGORY_LIST_CONTAINER.appendChild(
+			createCatagoryList(catagoryList[i])
+			);
+	}
 }
 
 function createCatagoryList(text){
+<<<<<<< HEAD
   const li = document.createElement("li");
   const a = document.createElement("a");
   li.classList.add("catg-item");
@@ -94,6 +104,14 @@ function renderProductCard(product){
 
     row.appendChild(contain);
   }
+=======
+	const li = document.createElement("li");
+	const a = document.createElement("a");
+	li.classList.add("catg-item");
+	a.innerHTML = text;
+	li.appendChild(a);
+	return li;
+>>>>>>> 01c45aca902ea17543e68fd10a55ab0e12186432
 }
 
 window.onload = getData();

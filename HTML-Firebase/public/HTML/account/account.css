@@ -77,11 +77,53 @@ body {
     color: #707070;
 }
 
+.container .list-group .list-group-item:hover {
+	background-color: gray;
+}
+
 h3 {
     color: #707070;
+}
 
+.signForm {
+	padding: 3%!important;
+    display: flex;
+    flex-direction: column;
+}
 
+.signForm img {
+	width: 50px;
+	align-self: center;
+}
 
+.signForm input {
+	margin: 10px 0;
+}
+
+.signForm a {
+	align-self: flex-end;
+}
+
+#toSignUp {
+	border: none;
+	text-align: end;
+	background-color: white;
+	color: blue;
+}
+
+.subnit {
+	margin-top: 10%;
+	padding: 15px;
+	width: 40%;
+	border-radius: 15px;
+	border: none;
+	align-self: center;
+	background-color: #C30DA4;
+	color: white;
+} 
+
+.subnit:hover {
+	background-color: #9A0B82;
 }
 /* .container .list-group .list-group-item a :hover{
 
